@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this project or its published results, please cite the repository."
+title: "GPU LLM Systems Lab"
+type: software
+authors:
+  - family-names: "Thanapirom"
+    given-names: "Chayut"
+repository-code: "https://github.com/chayut-t/gpu-llm-systems-lab"
+url: "https://github.com/chayut-t/gpu-llm-systems-lab"
+license: "Apache-2.0"
