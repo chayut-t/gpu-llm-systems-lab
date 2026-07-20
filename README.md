@@ -208,6 +208,27 @@ Every published result must record:
 
 See [`docs/methodology.md`](docs/methodology.md).
 
+## Development setup
+
+The project requires Python 3.11 or newer. Install it in editable mode with the
+development tools (pytest and Ruff) into a fresh virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[dev]'
+```
+
+Run the local quality checks:
+
+```bash
+python -m pytest        # tests, including the package import smoke test
+python -m ruff check .  # lint
+```
+
+At bootstrap the `benchmark` package exposes metadata only; runtime dependencies
+are empty and the GPU/inference-runtime stacks are added by later workstreams.
+
 ## Planned command interface
 
 The benchmark CLI is not implemented yet. The intended stable interface is:

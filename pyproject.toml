@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpu-llm-systems-lab"
+version = "0.0.0"
+description = "Reproducible, profiler-driven laboratory for LLM inference across NVIDIA GPU architectures."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Chayut Thanapirom" }]
+# Runtime dependencies are intentionally empty at bootstrap; GPU and inference-runtime
+# stacks are added by later workstreams, not here (see tasks/active/T0001).
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[tool.setuptools]
+packages = ["benchmark"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
